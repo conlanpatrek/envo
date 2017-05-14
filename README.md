@@ -30,11 +30,12 @@ env.json
 Could be `webpack.config.js`, or a gulp task, whatever.
 
 ```javascript
-// older
 require('envo')('env.fallbacks.json', 'env.json')
 ```
 
-``` es2015+
+or
+
+``` javascript
 import envo from 'envo'
 envo('env.fallbacks.json', 'env.json')
 ```

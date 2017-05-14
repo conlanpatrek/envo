@@ -7,7 +7,7 @@ let fs = require('fs')
  * @param  {...string} paths The list of paths sorted in priority order
  * @return {void}
  */
-function envo(...paths) {
+module.exports = function envo(...paths) {
   // Store higher priority (already defined) env variables
   let tmp = Object.assign({}, process.env)
   // Loop through paths and load
