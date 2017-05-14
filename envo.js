@@ -1,4 +1,5 @@
-let fs = require('fs')
+const fs = require('fs')
+const path = require('path')
 
 /**
  * Envo
@@ -7,11 +8,11 @@ let fs = require('fs')
  * @param  {...string} paths The list of paths sorted in priority order
  * @return {void}
  */
-module.exports = function envo(...paths) {
+module.exports = function envo (...paths) {
   // Store higher priority (already defined) env variables
   let tmp = Object.assign({}, process.env)
   // Loop through paths and load
-  paths.forEach(path => _readPath)
+  paths.forEach(_readPath)
   // Restore higher priority env variables
   Object.assign(process.env, tmp)
 }
@@ -23,6 +24,7 @@ module.exports = function envo(...paths) {
  * @param  {string} path The filepath to load, conditionally.
  * @return {void}
  */
-function _readPath(path) {
-  if (fs.existsSync(path)) Object.assign(process.env, require(path))
+function _readPath (filePath) {
+  filePath = path.resolve(filePath)
+  if (fs.existsSync(filePath)) Object.assign(process.env, require(filePath))
 }
