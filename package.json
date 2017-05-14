@@ -1,0 +1,17 @@
+{
+  "name": "envo",
+  "version": "0.0.1",
+  "description": "Read environment variable files into process.env",
+  "main": "envo.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/conlanpatrek/envo.git"
+  },
+  "author": "Conlan Patrek Craft",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/conlanpatrek/envo/issues"
+  },
+  "homepage": "https://github.com/conlanpatrek/envo#readme"
+}
